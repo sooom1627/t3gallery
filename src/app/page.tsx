@@ -1,37 +1,26 @@
+import { desc } from "drizzle-orm";
 import Image from "next/image";
 import { db } from "~/server/db";
 
 export const dynamic = "force-dynamic";
 
-const mockUrls = [
-  "https://picsum.photos/id/32/900/600.jpg",
-  "https://picsum.photos/id/48/900/600.jpg",
-  "https://picsum.photos/id/64/900/600.jpg",
-  "https://picsum.photos/id/80/900/600.jpg",
-];
-
-const mockImages = mockUrls.map((url, index) => ({
-  id: index + 1,
-  url,
-}));
-
 export default async function HomePage() {
-  const posts = await db.query.posts.findMany();
+  const images = await db.query.images.findMany({
+    orderBy: (model, { desc }) => desc(model.id),
+  });
 
   return (
     <main className="">
       <div className="flex flex-wrap gap-4">
-        {posts.map((post) => (
-          <div key={post.id}>{post.name}</div>
-        ))}
-        {[...mockImages, ...mockImages, ...mockImages].map((image, index) => (
-          <div key={image.id + "-" + index} className="w-48">
+        {images.map((image) => (
+          <div key={image.id} className="flex w-48 flex-col items-center">
             <Image
               src={image.url}
               alt={`image-${image.id}`}
               width={300}
               height={200}
             />
+            <div>{image.name}</div>
           </div>
         ))}
       </div>
