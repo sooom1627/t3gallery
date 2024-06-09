@@ -1,4 +1,3 @@
-import { desc } from "drizzle-orm";
 import Image from "next/image";
 import { db } from "~/server/db";
 
