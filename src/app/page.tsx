@@ -1,11 +1,11 @@
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Image from "next/image";
-import { getImages } from "~/server/queries";
+import { getMyImages } from "~/server/queries";
 
 export const dynamic = "force-dynamic";
 
 export const Images = async () => {
-  const images = await getImages();
+  const images = await getMyImages();
 
   return (
     <div className="flex flex-wrap gap-4">
