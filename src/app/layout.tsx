@@ -2,7 +2,7 @@ import "~/styles/globals.css";
 
 import { ClerkProvider } from "@clerk/nextjs";
 import { GeistSans } from "geist/font/sans";
-import { TopNav } from "./_components/topNav";
+import { TopNav } from "./_components/TopNav";
 
 export const metadata = {
   title: "T3 Gallery",
