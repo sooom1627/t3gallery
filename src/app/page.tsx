@@ -9,7 +9,7 @@ export const Images = async () => {
 
   return (
     <div className="flex flex-wrap gap-4">
-      {[...images, ...images, ...images].map((image) => (
+      {images.map((image) => (
         <div key={image.id} className="flex w-48 flex-col items-center">
           <Image
             src={image.url}
@@ -29,7 +29,7 @@ export default async function HomePage() {
     <main className="">
       <SignedOut>
         <div className="flex h-full w-full items-center justify-center text-2xl">
-          Please sign in to continue
+          Please sign in above.
         </div>
       </SignedOut>
       <SignedIn>
