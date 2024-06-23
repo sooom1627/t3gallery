@@ -13,6 +13,7 @@
 - [x] Use Next/Image component
 - [x] Error managemnt (w/ sentry)
 - [x] Routing/image page (parallel route)
+- [x] Set up shadcn ui
 - [ ] Delete button (w/ server actions)
 - [ ] Analytics (posthag)
 - [ ] Ratelimiting (upstash)
