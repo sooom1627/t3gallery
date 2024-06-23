@@ -11,13 +11,14 @@ export const Images = async () => {
   return (
     <div className="flex flex-wrap justify-center gap-4 p-4">
       {images.map((image) => (
-        <div key={image.id} className="flex w-48 flex-col items-center">
+        <div key={image.id} className="flex w-96 flex-col items-center">
           <Link href={`/img/${image.id}`}>
             <Image
               src={image.url}
               alt={`image-${image.id}`}
               width={300}
               height={200}
+              className="w-96"
             />
           </Link>
           <div>{image.name}</div>
